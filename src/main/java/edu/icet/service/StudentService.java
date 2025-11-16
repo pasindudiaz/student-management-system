@@ -42,4 +42,12 @@ public class StudentService {
     }
 
 
+    public void updateStudent(Student student) {
+        studentRepository.save(new StudentEntity(student.getId(),
+                student.getName(),
+                student.getAddress(),
+                student.getDOB(),
+                student.getEmail(),
+                student.getPhoneNumber()));
+    }
 }

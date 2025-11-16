@@ -28,9 +28,9 @@ public class StudentController {
            studentService.deleteStudent(id);
     }
 
-    @PatchMapping
-    public void updateStudent(){
-
+    @PatchMapping("update")
+    public void updateStudent(@RequestBody Student student){
+         studentService.updateStudent(student);
     }
 
 }
