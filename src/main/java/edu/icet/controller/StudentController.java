@@ -1,6 +1,8 @@
 package edu.icet.controller;
 
 import edu.icet.model.dto.Student;
+import edu.icet.service.StudentService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -8,10 +10,12 @@ import java.util.ArrayList;
 @RestController
 public class StudentController {
 
-    @GetMapping()
-    public ArrayList<Student> getAllStudents(){
+    @Autowired
+    StudentService studentService;
 
-        return null;
+    @GetMapping("get")
+    public ArrayList<Student> getAllStudents(){
+        return studentService.getAllStudents();
     }
 
     @PostMapping
