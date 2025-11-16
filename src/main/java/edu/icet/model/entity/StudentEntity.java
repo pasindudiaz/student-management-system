@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.*;
 
+import java.time.LocalDate;
+
 @Setter
 @Getter
 @AllArgsConstructor
@@ -17,7 +19,7 @@ public class StudentEntity {
     String id;
     String name;
     String address;
-    String DOB;
+    LocalDate DOB;
     String email;
     Integer phoneNumber;
 

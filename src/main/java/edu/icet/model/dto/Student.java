@@ -1,6 +1,7 @@
 package edu.icet.model.dto;
 
 import lombok.*;
+import java.time.LocalDate;
 
 @Setter
 @Getter
@@ -13,7 +14,7 @@ public class Student {
     String id;
     String name;
     String address;
-    String DOB;
+    LocalDate DOB;
     String email;
     Integer phoneNumber;
 
