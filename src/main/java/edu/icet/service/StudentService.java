@@ -27,4 +27,13 @@ public class StudentService {
        }
        return StudentList;
     }
+
+    public void addStudent(Student student) {
+        studentRepository.save(new StudentEntity(student.getId(),
+                student.getName(),
+                student.getAddress(),
+                student.getDOB(),
+                student.getEmail(),
+                student.getPhoneNumber()));
+    }
 }
