@@ -36,4 +36,10 @@ public class StudentService {
                 student.getEmail(),
                 student.getPhoneNumber()));
     }
+
+    public void deleteStudent(String id) {
+        studentRepository.deleteById(id);
+    }
+
+
 }

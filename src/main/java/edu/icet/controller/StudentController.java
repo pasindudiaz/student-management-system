@@ -23,9 +23,9 @@ public class StudentController {
          studentService.addStudent(student);
     }
 
-    @DeleteMapping
-    public void  deleteStudent(){
-
+    @DeleteMapping("delete")
+    public void  deleteStudent(@RequestBody String id){
+           studentService.deleteStudent(id);
     }
 
     @PatchMapping
