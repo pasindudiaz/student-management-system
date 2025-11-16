@@ -13,24 +13,29 @@ public class StudentController {
     @Autowired
     StudentService studentService;
 
-    @GetMapping("get")
+    @GetMapping("/get")
     public ArrayList<Student> getAllStudents(){
         return studentService.getAllStudents();
     }
 
-    @PostMapping("post")
+    @PostMapping("/post")
     public void addStudent(@RequestBody Student student){
          studentService.addStudent(student);
     }
 
-    @DeleteMapping("delete")
-    public void  deleteStudent(@RequestBody String id){
+    @DeleteMapping("/delete/{id}")
+    public void  deleteStudent(@PathVariable ("id")  String id){
            studentService.deleteStudent(id);
     }
 
-    @PatchMapping("update")
+    @PatchMapping("/update")
     public void updateStudent(@RequestBody Student student){
          studentService.updateStudent(student);
+    }
+
+    @GetMapping("/search/{id}")
+    public Student searchStudent(@PathVariable ("id")  String id){
+        return studentService.searchStudent(id);
     }
 
 }

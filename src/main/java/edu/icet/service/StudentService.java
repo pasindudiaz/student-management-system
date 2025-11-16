@@ -6,6 +6,7 @@ import edu.icet.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
+import java.util.Optional;
 
 @Service
 public class StudentService {
@@ -49,5 +50,16 @@ public class StudentService {
                 student.getDOB(),
                 student.getEmail(),
                 student.getPhoneNumber()));
+    }
+
+    public Student searchStudent(String id) {
+        Optional<StudentEntity> StudentEntity = studentRepository.findById(id);
+        return ( new Student(StudentEntity.get().getId(),
+                StudentEntity.get().getName(),
+                StudentEntity.get().getAddress(),
+                StudentEntity.get().getDOB(),
+                StudentEntity.get().getEmail(),
+                StudentEntity.get().getPhoneNumber()));
+
     }
 }
